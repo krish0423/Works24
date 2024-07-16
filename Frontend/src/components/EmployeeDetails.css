@@ -1,0 +1,135 @@
+:root {
+  --green: #0a1823;
+  --lightgreen1: #a4bdb7;
+  --brown: #b80d15;
+  --gray: rgb(162, 162, 162);
+  --lightgreen2: rgba(164, 189, 183, 0.5);
+  --box: #ededed;
+}
+
+.empPageColor {
+  background-image: linear-gradient(
+    90deg,
+    #ebffff 0%,
+    #eff3ff 30%,
+    #feeeff 100%
+  );
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.card {
+  width: auto;
+  margin: 20px auto;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: rgba(99, 104, 109, 0.112) 0px 5px 15px;
+  border: 1px solid #f8f7ff;
+  max-width: 700px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-img {
+  width: 230px;
+  height: 230px;
+  border-radius: 8%;
+  display: block;
+  object-fit: cover;
+  margin: 20px auto;
+}
+
+.card-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--green);
+  text-align: left;
+  width: 100%;
+}
+
+.details {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #57595d;
+  text-align: left;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.buttons .message {
+  background: var(--box);
+  border: 2px solid var(--green);
+  color: var(--green);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.buttons .connect {
+  background-color: var(--brown);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.buttons .message:hover,
+.buttons .connect:hover {
+  letter-spacing: 1px;
+  transition: 0.5s;
+  background-color: var(--green);
+  color: white;
+}
+
+.detailsTitle {
+  font-weight: 600;
+  color: #444;
+  text-align: left;
+  width: 100%;
+}
+
+label {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.empCard {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .empCard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-title,
+  .details,
+  .buttons {
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
