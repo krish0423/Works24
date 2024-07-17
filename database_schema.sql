@@ -442,5 +442,46 @@ ALTER TABLE ONLY public.clock_records
     ADD CONSTRAINT fk_employee FOREIGN KEY (employee_id) REFERENCES public.employee(id);
 
 
+CREATE TABLE public.customer (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    company_name VARCHAR(255),
+    work VARCHAR(255),
+    email VARCHAR(255),
+    mobile_number VARCHAR(15),
+    address VARCHAR(255),
+    visiting_card_photo VARCHAR(255)
+);
+
+INSERT INTO public.customer (name, company_name, work, email, mobile_number, address, visiting_card_photo) VALUES
+  ('John Doe', 'ABC Company', 'Engineer', 'john.doe@example.com', '1234567890', '123 Main St, Anytown', 'john_doe_card.jpg'),
+  ('Jane Smith', 'XYZ Corporation', 'Manager', 'jane.smith@example.com', '9876543210', '456 Oak Ave, Somewhere', 'jane_smith_card.jpg'),
+  ('Michael Johnson', 'PQR Ltd', 'Developer', 'michael.johnson@example.com', '5551234567', '789 Elm St, Nowhere', 'michael_johnson_card.jpg');
 
 
+CREATE TABLE public.tour_plans (
+    id SERIAL PRIMARY KEY,
+    employee_id INTEGER REFERENCES public.employee(id),
+    from_date DATE NOT NULL,
+    from_location VARCHAR(255) NOT NULL,
+    to_date DATE NOT NULL,
+    to_location VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    state VARCHAR(100) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    approx_distance VARCHAR(50),
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE public.call_reports (
+    id SERIAL PRIMARY KEY,
+    employee_id INTEGER REFERENCES public.employee(id),
+    date DATE NOT NULL,
+    current_location VARCHAR(255) NOT NULL,
+    live_photo VARCHAR(255),
+    remark TEXT,
+    next_follow_up_date DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
