@@ -1,0 +1,11 @@
+.nav-link.text-black {
+    color: black !important;
+    text-decoration: none !important;
+  }
+  
+  .nav-link.text-black:hover {
+    color: black !important;
+    text-decoration: none !important;
+    background-color: transparent !important; /* Ensure no background change on hover */
+  }
+  
