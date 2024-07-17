@@ -7,9 +7,9 @@ dotenv.config();
 const db = new pg.Client({
   user: "postgres",
   host: "localhost",
-  database: "worksuit",
-  password: "070904",
-  port: 5433,
+  database: "works24",
+  password: "ridham@2004",
+  port: 5432,
 });
 db.connect((err) => {
   if (err) {

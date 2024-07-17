@@ -2,6 +2,7 @@ import express from "express";
 import cors from 'cors';
 import { adminRouter } from "./Routes/AdminRoute.js";
 import { employeeRouter } from "./Routes/EmployeeRoute.js";
+import customerRouter from "./Routes/CustomerRoute.js";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 
@@ -38,6 +39,7 @@ const verifyUser = (req, res, next) => {
 // Routes
 app.use('/auth', adminRouter);
 app.use('/employee', employeeRouter);
+app.use('/customer', customerRouter);
 
 // Verify route
 app.get('/verify', verifyUser, (req, res)=> {
