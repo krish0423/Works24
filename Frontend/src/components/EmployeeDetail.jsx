@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import ClockIn from './ClockIn';
 import EmployeeCalendar from './EmployeeCalendar';
+import Navbar from '../components/Navbar';
 
 function EmployeeDetail() {
     const [employee, setEmployee] = useState(null);
@@ -59,6 +60,7 @@ function EmployeeDetail() {
     const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
 
     return (
+        <><Navbar  employeeId={id}/>
         <div className='empPageColor'>
             <header className="header-employee py-3"  style={{backgroundColor:'#fff'}}>
                 <div className="container-fluid ">
@@ -109,6 +111,7 @@ function EmployeeDetail() {
             <EmployeeCalendar employeeId={id} />
             </div>
         </div>
+        </>
     );
 }
 
