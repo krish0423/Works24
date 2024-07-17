@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import SidebarClose from "../assets/SidebarClose";
 import SidebarOpen from "../assets/SidebarOpen";
+import { RiCustomerService2Line } from "react-icons/ri";
 
 const Sidebar = ({ sidebarOpen, toggleSidebar, handleLogout }) => {
   const location = useLocation();
@@ -108,6 +109,26 @@ const Sidebar = ({ sidebarOpen, toggleSidebar, handleLogout }) => {
                 }`}
               >
                 Category
+              </span>
+            </Link>
+          </li>
+          <li className="w-100">
+            <Link
+              to="/dashboard/customer"
+              className={`nav-link text-white ${
+                sidebarOpen ? "px-3" : "px-1 justify-content-center"
+              } my-1 py-2 align-middle ${
+                location.pathname === "/dashboard/category" ? "active" : ""
+              }`}
+              title={!sidebarOpen ? "Category" : ""}
+            >
+              <RiCustomerService2Line className="fs-5 mx-1 bi bi-tags"  />
+              <span
+                className={`ms-2 d-none d-sm-inline ${
+                  !sidebarOpen ? "hidden" : ""
+                }`}
+              >
+                Customer
               </span>
             </Link>
           </li>
