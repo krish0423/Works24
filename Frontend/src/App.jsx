@@ -15,6 +15,7 @@ import EmployeeDetail from "./components/EmployeeDetail";
 import PrivateRoute from "./components/PrivateRoute";
 import "react-toastify/dist/ReactToastify.css";
 import Office from "./components/Office";
+import CustomerForm from "./components/CustomerForm"
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         >
           <Route path="" element={<Home />}></Route>
           <Route path="/dashboard/employee" element={<Employee />}></Route>
+          <Route path="/dashboard/customer" element={<CustomerForm />}></Route>
           <Route path="/dashboard/category" element={<Category />}></Route>
           <Route
             path="/dashboard/manageadmin"
@@ -60,7 +62,9 @@ function App() {
           ></Route>
           <Route path="/dashboard/officeaddress" element={<Office />}></Route>
         </Route>
+        
       </Routes>
+
     </BrowserRouter>
   );
 }
