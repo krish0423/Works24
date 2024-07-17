@@ -3,6 +3,8 @@ import cors from 'cors';
 import { adminRouter } from "./Routes/AdminRoute.js";
 import { employeeRouter } from "./Routes/EmployeeRoute.js";
 import customerRouter from "./Routes/CustomerRoute.js";
+import tourplanRouter from "./Routes/TourPlanRoute.js";
+import callReportRouter from "./Routes/CallReportRoute.js";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 
@@ -40,6 +42,8 @@ const verifyUser = (req, res, next) => {
 app.use('/auth', adminRouter);
 app.use('/employee', employeeRouter);
 app.use('/customer', customerRouter);
+app.use('/tourplan',  tourplanRouter)
+app.use('/callreport',  callReportRouter)
 
 // Verify route
 app.get('/verify', verifyUser, (req, res)=> {
